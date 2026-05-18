@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-mybg: #000010;
+    --color-myacc: #55ffff;
+    --font-mono: "geist-mono";
+    --font-sans: "geist-sans";
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    box-sizing: border-box;
+    border: 4px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: var(--font-sans), sans-serif;
+}
+
+@utility mybtn {
+    @apply flex items-center justify-center;
+    font-size: 88%;
+    padding: 0.25rem;
+    font-family: mono, monospace;
+    border-radius: 20%;
+    border: 2px solid #55ffff;
+    background-color: var(--color-mybg);
+    color: #fff;
+    width: 3.25rem;
+    height: 1.75rem;
+
+    &:hover {
+        color: #fff;
+        text-shadow: 0 5px 4rem #fff;
+        cursor: pointer;
+        border-color: #0ff;
+        font-size: 125%;
+    }
+
+    &:active {
+        color: #00f;
+        text-shadow: 0 0 10px #000;
+        cursor: pointer;
+        font-size: 200%;
+        font-weight: bolder;
+        border-color: #000;
+        transition: 0.55ms;
+    }
+}
